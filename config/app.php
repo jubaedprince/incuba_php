@@ -147,7 +147,8 @@ return [
 
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        'Laracasts\Flash\FlashServiceProvider'
+        'Laracasts\Flash\FlashServiceProvider',
+        'Zizaco\Entrust\EntrustServiceProvider'
     ],
 
     /*
@@ -196,7 +197,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
-        'Flash'     => 'Laracasts\Flash\Flash'
+        'Flash'     => 'Laracasts\Flash\Flash',
+        'Entrust'   => 'Zizaco\Entrust\EntrustFacade'
 
     ],
 
