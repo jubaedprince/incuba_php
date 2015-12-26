@@ -13,6 +13,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
+Route::get('profile', 'PagesController@profile');
 Route::get('contact', 'PagesController@contact');
 
 Route::resource('articles.comments', 'ArticlesCommentsController');

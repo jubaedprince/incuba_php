@@ -11,6 +11,7 @@ use App\Article;
 use App\Comment;
 use Request;
 use Carbon\Carbon;
+use Auth;
 
 class ArticlesCommentsController extends Controller
 {
@@ -38,12 +39,14 @@ class ArticlesCommentsController extends Controller
 
     public function store($articleId)
     {
-        $comment = new Comment(['body' => Request::input('body')]);
+        $comment = Request::user()->comments()->create([
+            'body' => Request::input('body'),
+        ]);
 
         $article = Article::find($articleId);
 
         $article->comments()->save($comment);
 
-        return redirect('articles');
+        return redirect()->back();
     }
 }
