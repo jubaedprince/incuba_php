@@ -1,6 +1,20 @@
 {{-- $thread is passed as NULL to the master layout view to prevent it from showing in the breadcrumbs --}}
 @extends ('forum::master', ['thread' => null])
 
+@section('breadcrumb_page_name')
+    {{$category->title}}
+@stop
+
+@section('breadcrumb_links')
+    <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+        <li>
+            <a href="/forum">Home</a>
+        </li>
+        <li>/</li>
+        <li class="c-state_active"> {{$category->title}}</li>
+    </ul>
+@stop
+
 @section ('content')
     <div id="category">
         @can ('createCategories')
