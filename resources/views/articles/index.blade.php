@@ -42,16 +42,16 @@
                         </div>
                         <div class="c-desc">
                             {{$article->body}}
-                            <a href="#">read more...</a>
+                            <a href="{{action('ArticlesController@show', [$article->id] )}}">read more...</a>
                         </div>
                         <div class="c-panel">
                             <div class="c-author">
                                 <a href="#">By
-                                    <span class="c-font-uppercase">Nick Strong</span>
+                                    <span class="c-font-uppercase">Incuba</span>
                                 </a>
                             </div>
                             <div class="c-date">on
-                                <span class="c-font-uppercase">20 May 2015, 10:30AM</span>
+                                <span class="c-font-uppercase">{{$article->created_at->diffForHumans()}}</span>
                             </div>
                             <ul class="c-tags c-theme-ul-bg">
                                 <li>ux</li>
@@ -59,8 +59,8 @@
                                 <li>html</li>
                             </ul>
                             <div class="c-comments">
-                                <a href="#">
-                                    <i class="icon-speech"></i> 30 comments</a>
+                                <a href="{{action('ArticlesController@show', [$article->id] )}}">
+                                    <i class="icon-speech"></i> {{count($article->comments)}} comments</a>
                             </div>
                         </div>
                     </div>

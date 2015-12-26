@@ -25,7 +25,7 @@ class PagesController extends Controller
     }
 
     public function home(){
-        auth()->loginUsingId(1);
+//        auth()->loginUsingId(1);
         return view('pages.home');
 
     }
