@@ -9,9 +9,10 @@
         "laravel/framework": "5.1.*",
         "cviebrock/eloquent-sluggable": "^3.1",
         "barryvdh/laravel-ide-helper": "^2.1",
-        "zizaco/entrust": "dev-laravel-5",
         "doctrine/dbal": "^2.5",
-        "illuminate/html": "^5.0"
+        "illuminate/html": "^5.0",
+        "riari/laravel-forum": "~3.0",
+        "riari/laravel-forum-frontend": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

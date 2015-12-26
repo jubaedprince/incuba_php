@@ -148,8 +148,9 @@ return [
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         'Laracasts\Flash\FlashServiceProvider',
-        'Zizaco\Entrust\EntrustServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
+        'Riari\Forum\ForumServiceProvider',
+        'Riari\Forum\Frontend\ForumFrontendServiceProvider',
     ],
 
     /*
@@ -199,7 +200,6 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         'Flash'     => 'Laracasts\Flash\Flash',
-        'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
         'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
 

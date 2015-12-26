@@ -1,15 +1,128 @@
 @extends('app');
 
-@section('content')
-    <h1>Articles</h1>
-    <hr/>
-    @foreach ($articles as $article)
-        <article>
-            <h2>
-                <a href="{{action('ArticlesController@show', [$article->id] )}}">{{$article->title}}</a>
-            </h2>
 
-            <div class="body">{{$article->body}}</div>
-        </article>
-    @endforeach
+@section('breadcrumb_page_name')
+    Articles
+@stop
+
+@section('breadcrumb_links')
+    <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>/</li>
+        <li class="c-state_active"> Articles</li>
+    </ul>
+@stop
+
+@section('content')
+    <div class="row">
+        <div class="col-md-9">
+            <div class="c-content-blog-post-1-list">
+
+                @foreach ($articles as $article)
+                    <div class="c-content-blog-post-1">
+                        <div class="c-media">
+                            <div class="c-content-media-2-slider" data-slider="owl" data-single-item="true" data-auto-play="4000">
+                                <div class="owl-carousel owl-theme c-theme owl-single">
+                                    <div class="item">
+                                        <div class="c-content-media-2" style="background-image: url(/assets/base/img/content/stock/23.jpg); min-height: 360px;"> </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="c-content-media-2" style="background-image: url(/assets/base/img/content/stock/34.jpg); min-height: 360px;"> </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="c-content-media-2" style="background-image: url(/assets/base/img/content/stock/37.jpg); min-height: 360px;"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-title c-font-bold c-font-uppercase">
+                            <a href="{{action('ArticlesController@show', [$article->id] )}}">{{$article->title}}</a>
+                        </div>
+                        <div class="c-desc">
+                            {{$article->body}}
+                            <a href="#">read more...</a>
+                        </div>
+                        <div class="c-panel">
+                            <div class="c-author">
+                                <a href="#">By
+                                    <span class="c-font-uppercase">Nick Strong</span>
+                                </a>
+                            </div>
+                            <div class="c-date">on
+                                <span class="c-font-uppercase">20 May 2015, 10:30AM</span>
+                            </div>
+                            <ul class="c-tags c-theme-ul-bg">
+                                <li>ux</li>
+                                <li>web</li>
+                                <li>html</li>
+                            </ul>
+                            <div class="c-comments">
+                                <a href="#">
+                                    <i class="icon-speech"></i> 30 comments</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+                <div class="c-pagination">
+                    <ul class="c-content-pagination c-theme">
+                        <li class="c-prev">
+                            <a href="#">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">1</a>
+                        </li>
+                        <li class="c-active">
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li class="c-next">
+                            <a href="#">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <!-- BEGIN: CONTENT/BLOG/BLOG-SIDEBAR-1 -->
+            <div class="c-content-ver-nav">
+                <div class="c-content-title-1 c-theme c-title-md c-margin-t-40">
+                    <h3 class="c-font-bold c-font-uppercase">Categories</h3>
+                    <div class="c-line-left c-theme-bg"></div>
+                </div>
+                <ul class="c-menu c-arrow-dot1 c-theme">
+                    <li>
+                        <a href="#">Web Development(2)</a>
+                    </li>
+                    <li>
+                        <a href="#">UX Design(12)</a>
+                    </li>
+                    <li>
+                        <a href="#">Mobile Development(5)</a>
+                    </li>
+                    <li>
+                        <a href="#">Internet Marketing(7)</a>
+                    </li>
+                    <li>
+                        <a href="#">Social Networks(11)</a>
+                    </li>
+                    <li>
+                        <a href="#">Web Design(18)</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
 @stop

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Article extends Model
 {
     protected $fillable = [
@@ -12,4 +13,9 @@ class Article extends Model
         'published_at',
         'excerpt'
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

@@ -1,8 +1,21 @@
 <?php
 
+
+// Authentication Routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration Routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+
+Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 
+Route::resource('articles.comments', 'ArticlesCommentsController');
 Route::get('articles', 'ArticlesController@index');
 Route::get('articles/create', 'ArticlesController@create');
 Route::get('articles/{id}', 'ArticlesController@show');
