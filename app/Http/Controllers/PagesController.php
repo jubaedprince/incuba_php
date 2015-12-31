@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Article;
+use App\Opportunity;
 class PagesController extends Controller
 {
     public function about(){
@@ -26,8 +27,9 @@ class PagesController extends Controller
 
     public function home(){
         $articles = Article::latest()->get();
+        $opportunities = Opportunity::all()->sort();
 //        return view('articles.index', compact('articles'));
-        return view('pages.home');
+        return view('pages.home', compact('articles', 'opportunities'));
 
     }
 

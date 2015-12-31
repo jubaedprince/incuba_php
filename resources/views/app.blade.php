@@ -60,21 +60,10 @@
                     <button class="c-topbar-toggler" type="button">
                         <i class="fa fa-ellipsis-v"></i>
                     </button>
-                    <button class="c-search-toggler" type="button">
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <button class="c-cart-toggler" type="button">
-                        <i class="icon-handbag"></i>
-                        <span class="c-cart-number c-theme-bg">2</span>
-                    </button>
+
                 </div>
                 <!-- END: BRAND -->
-                <!-- BEGIN: QUICK SEARCH -->
-                <form class="c-quick-search" action="#">
-                    <input type="text" name="query" placeholder="Type to search..." value="" class="form-control" autocomplete="off">
-                    <span class="c-theme-link">&times;</span>
-                </form>
-                <!-- END: QUICK SEARCH -->
+
                 <!-- BEGIN: HOR NAV -->
                 <!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU -->
                 <!-- BEGIN: MEGA MENU -->
@@ -119,14 +108,14 @@
                         @endif
 
                         <li>
-                            <a href="/forum" class="c-link dropdown-toggle">Discuss
+                            <a href="/questions" class="c-link dropdown-toggle">Questions
                                 <span class="c-arrow c-toggler"></span>
                             </a>
 
                         </li>
 
                         <li>
-                            <a href="#" class="c-link dropdown-toggle">Opportunity
+                            <a href="/opportunity" class="c-link dropdown-toggle">Opportunity
                                 <span class="c-arrow c-toggler"></span>
                             </a>
 
@@ -146,11 +135,6 @@
 
                         </li>
 
-                        <li class="c-search-toggler-wrapper">
-                            <a href="#" class="c-btn-icon c-search-toggler">
-                                <i class="fa fa-search"></i>
-                            </a>
-                        </li>
 
                         @if (Auth::guest())
                             <li>
@@ -164,13 +148,7 @@
                                     <i class="icon-user"></i>Sign Out</a>
                             </li>
                         @endif
-                        <li class="c-quick-sidebar-toggler-wrapper">
-                            <a href="#" class="c-quick-sidebar-toggler">
-                                <span class="c-line"></span>
-                                <span class="c-line"></span>
-                                <span class="c-line"></span>
-                            </a>
-                        </li>
+
                     </ul>
                 </nav>
                 <!-- END: MEGA MENU -->
@@ -355,6 +333,9 @@
 </script>
 <!-- END: THEME SCRIPTS -->
 <!-- END: LAYOUT/BASE/BOTTOM -->
+
+
+@yield('footer')
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

@@ -72,7 +72,4 @@
     </div>
 @stop
 
-@section('footer')
-    <script>alert('hey people!');</script>
-@stop
 

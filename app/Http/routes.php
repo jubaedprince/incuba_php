@@ -22,3 +22,11 @@ Route::get('articles/{id}', 'ArticlesController@show');
 Route::post('articles', 'ArticlesController@store');
 
 Route::resource('category', 'CategoryController');
+
+Route::resource('questions.answers', 'QuestionsAnswersController');
+Route::get('questions', 'QuestionsController@index');
+Route::get('questions/create', 'QuestionsController@create');
+Route::get('questions/{id}', 'QuestionsController@show');
+Route::post('questions', 'QuestionsController@store');
+
+Route::resource('opportunity', 'OpportunityController');
