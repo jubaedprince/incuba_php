@@ -10,7 +10,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-
 Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('profile', 'PagesController@profile');
@@ -21,3 +20,5 @@ Route::get('articles', 'ArticlesController@index');
 Route::get('articles/create', 'ArticlesController@create');
 Route::get('articles/{id}', 'ArticlesController@show');
 Route::post('articles', 'ArticlesController@store');
+
+Route::resource('category', 'CategoryController');

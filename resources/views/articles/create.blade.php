@@ -36,6 +36,10 @@
         </div>
 
         <div class="form-group">
+            {!! Form::label('category_id', 'Category') !!}
+            {!! Form::select('category_id', $categories)!!}
+        </div>
+        <div class="form-group">
             {!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
         </div>
     {!! Form::close() !!}

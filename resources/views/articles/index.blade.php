@@ -47,17 +47,17 @@
                         <div class="c-panel">
                             <div class="c-author">
                                 <a href="#">By
-                                    <span class="c-font-uppercase">Incuba</span>
+                                    <span class="c-font-uppercase">{{$article->user->name}}</span>
                                 </a>
                             </div>
                             <div class="c-date">on
                                 <span class="c-font-uppercase">{{$article->created_at->diffForHumans()}}</span>
                             </div>
+
                             <ul class="c-tags c-theme-ul-bg">
-                                <li>ux</li>
-                                <li>web</li>
-                                <li>html</li>
+                                <li>{{$article->category->name}}</li>
                             </ul>
+
                             <div class="c-comments">
                                 <a href="{{action('ArticlesController@show', [$article->id] )}}">
                                     <i class="icon-speech"></i> {{count($article->comments)}} comments</a>
@@ -66,32 +66,6 @@
                     </div>
                 @endforeach
 
-                <div class="c-pagination">
-                    <ul class="c-content-pagination c-theme">
-                        <li class="c-prev">
-                            <a href="#">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">1</a>
-                        </li>
-                        <li class="c-active">
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#">4</a>
-                        </li>
-                        <li class="c-next">
-                            <a href="#">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
         <div class="col-md-3">
@@ -102,24 +76,9 @@
                     <div class="c-line-left c-theme-bg"></div>
                 </div>
                 <ul class="c-menu c-arrow-dot1 c-theme">
-                    <li>
-                        <a href="#">Web Development(2)</a>
-                    </li>
-                    <li>
-                        <a href="#">UX Design(12)</a>
-                    </li>
-                    <li>
-                        <a href="#">Mobile Development(5)</a>
-                    </li>
-                    <li>
-                        <a href="#">Internet Marketing(7)</a>
-                    </li>
-                    <li>
-                        <a href="#">Social Networks(11)</a>
-                    </li>
-                    <li>
-                        <a href="#">Web Design(18)</a>
-                    </li>
+                    @foreach(App\Category::all() as $category)
+                       <li><a href="/articles?filterBycategory_id={{$category->id}}">{{$category->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
 

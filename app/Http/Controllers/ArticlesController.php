@@ -10,12 +10,18 @@ use App\Http\Controllers\Controller;
 use App\Article;
 use Request;
 use Carbon\Carbon;
+use Auth;
+use App\Category;
 
 class ArticlesController extends Controller
 {
     public function index()
     {
-        $articles = Article::latest()->get();
+        if (Request::has('filterBycategory_id')){
+            $articles = Article::where('category_id', Request::input('filterBycategory_id'))->get();
+        }else{
+            $articles = Article::latest()->get();
+        }
         return view('articles.index', compact('articles'));
     }
 
@@ -27,15 +33,16 @@ class ArticlesController extends Controller
 
     public function create()
     {
-        return view('articles.create');
+        $categories = Category::lists('name', 'id')->sort();
+        return view('articles.create', compact('categories'));
     }
 
     public function store()
     {
         $input = Request::all();
-        $input['published_at'] = Carbon::now();
-
-        Article::create($input);
+        $article = Article::create($input);
+        $article->user_id = Auth::user()->id;
+        $article->save();
         return redirect('articles');
     }
 }

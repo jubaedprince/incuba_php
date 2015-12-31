@@ -104,6 +104,13 @@
                             </li>
 
                             <li>
+                                <a href="/category" class="c-link dropdown-toggle">Cats
+                                    <span class="c-arrow c-toggler"></span>
+                                </a>
+
+                            </li>
+
+                            <li>
                                 <a href="/profile" class="c-link dropdown-toggle">Profile
                                     <span class="c-arrow c-toggler"></span>
                                 </a>

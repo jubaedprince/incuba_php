@@ -39,17 +39,12 @@
                     <div class="c-panel c-margin-b-30">
                         <div class="c-author">
                             <a href="#">By
-                                <span class="c-font-uppercase">Nick Strong</span>
+                                <span class="c-font-uppercase">{{$article->user->name}}</span>
                             </a>
                         </div>
                         <div class="c-date">on
                             <span class="c-font-uppercase">{{$article->created_at->diffForHumans()}}</span>
                         </div>
-                        <ul class="c-tags c-theme-ul-bg">
-                            <li>ux</li>
-                            <li>marketing</li>
-                            <li>events</li>
-                        </ul>
 
                     </div>
                     <div class="c-desc">
@@ -109,24 +104,9 @@
                     <div class="c-line-left c-theme-bg"></div>
                 </div>
                 <ul class="c-menu c-arrow-dot1 c-theme">
-                    <li>
-                        <a href="#">Web Development(2)</a>
-                    </li>
-                    <li>
-                        <a href="#">UX Design(12)</a>
-                    </li>
-                    <li>
-                        <a href="#">Mobile Development(5)</a>
-                    </li>
-                    <li>
-                        <a href="#">Internet Marketing(7)</a>
-                    </li>
-                    <li>
-                        <a href="#">Social Networks(11)</a>
-                    </li>
-                    <li>
-                        <a href="#">Web Design(18)</a>
-                    </li>
+                    @foreach(App\Category::all() as $category)
+                        <li><a href="/articles?category_id={{$category->id}}">{{$category->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>

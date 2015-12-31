@@ -148,9 +148,7 @@ return [
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         'Laracasts\Flash\FlashServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider',
-        'Riari\Forum\ForumServiceProvider',
-        'Riari\Forum\Frontend\ForumFrontendServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider'
     ],
 
     /*

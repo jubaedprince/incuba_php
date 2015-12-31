@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Article;
 class PagesController extends Controller
 {
     public function about(){
@@ -25,7 +25,8 @@ class PagesController extends Controller
     }
 
     public function home(){
-//        auth()->loginUsingId(1);
+        $articles = Article::latest()->get();
+//        return view('articles.index', compact('articles'));
         return view('pages.home');
 
     }
