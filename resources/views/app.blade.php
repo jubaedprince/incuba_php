@@ -84,27 +84,34 @@
 
                         </li>
 
-                        @if (Auth::user())
-                            <li>
-                                <a href="/articles/create" class="c-link dropdown-toggle">Write
-                                    <span class="c-arrow c-toggler"></span>
-                                </a>
+                        @if (Auth::check())
+                            @if (Auth::user()->isAdmin() | Auth::user()->isWriter() )
 
-                            </li>
+                                <li>
+                                    <a href="/articles/create" class="c-link dropdown-toggle">Write
+                                        <span class="c-arrow c-toggler"></span>
+                                    </a>
 
-                            <li>
-                                <a href="/category" class="c-link dropdown-toggle">Cats
-                                    <span class="c-arrow c-toggler"></span>
-                                </a>
+                                </li>
 
-                            </li>
+                            @endif
 
-                            <li>
-                                <a href="/profile" class="c-link dropdown-toggle">Profile
-                                    <span class="c-arrow c-toggler"></span>
-                                </a>
+                            @if (Auth::user()->isAdmin())
 
-                            </li>
+                                <li>
+                                    <a href="/category" class="c-link dropdown-toggle">Cats
+                                        <span class="c-arrow c-toggler"></span>
+                                    </a>
+
+                                </li>
+
+                                <li>
+                                    <a href="/profile" class="c-link dropdown-toggle">Profile
+                                        <span class="c-arrow c-toggler"></span>
+                                    </a>
+
+                                </li>
+                            @endif
                         @endif
 
                         <li>

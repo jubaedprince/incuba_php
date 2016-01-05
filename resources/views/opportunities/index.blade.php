@@ -13,13 +13,15 @@
     <!-- BEGIN: BLOG LISTING -->
     <div class="c-content-box c-size-md">
         <div class="container">
-            <div class="row">
-                <a href="/opportunity/create">
-                    <button type="button" class="btn btn-primary c-btn-uppercase c-btn-bold pull-right">
-                        <i class="fa fa-plus"></i> create new opportunity
-                    </button>
-                </a>
-            </div>
+            @if(Auth::check() && Auth::user()->isAdmin())
+                <div class="row">
+                    <a href="/opportunity/create">
+                        <button type="button" class="btn btn-primary c-btn-uppercase c-btn-bold pull-right">
+                            <i class="fa fa-plus"></i> create new opportunity
+                        </button>
+                    </a>
+                </div>
+            @endif
 
             <div class="c-content-blog-post-card-1-slider" data-slider="owl" data-items="3" data-auto-play="8000">
                 <!-- Begin: Title 1 component -->
@@ -52,9 +54,11 @@
 
                                     <p> {{$opportunity->description}}</p>
 
-                                    {!! Form::open(array('route' => array('opportunity.destroy', $opportunity->id), 'method' => 'delete')) !!}
-                                    <button type="submit" class="btn btn-danger btn-mini">Delete</button>
-                                    {!! Form::close() !!}
+                                    @if(Auth::check() && Auth::user()->isAdmin())
+                                        {!! Form::open(array('route' => array('opportunity.destroy', $opportunity->id), 'method' => 'delete')) !!}
+                                        <button type="submit" class="btn btn-danger btn-mini">Delete</button>
+                                        {!! Form::close() !!}
+                                    @endif
 
                                 </div>
                             </div>

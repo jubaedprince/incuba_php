@@ -36,7 +36,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = ['password', 'remember_token', 'type'];
 
     public function comments()
     {
@@ -57,5 +57,15 @@ class User extends Model implements AuthenticatableContract,
     public function answers()
     {
         return $this->hasMany(Answer::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->type == 'admin';
+    }
+
+    public function isWriter()
+    {
+        return $this->type == 'writer';
     }
 }

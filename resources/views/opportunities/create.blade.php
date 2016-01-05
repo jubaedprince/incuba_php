@@ -2,7 +2,7 @@
 
 
 @section('breadcrumb_page_name')
-    Write Article
+    Create Opportunity
 @stop
 
 @section('breadcrumb_links')
@@ -22,7 +22,7 @@
 @stop
 
 @section('content')
-    <h1>Write a New Article</h1>
+    <h1>Create a New Opportunity</h1>
     <hr/>
     {!! Form::open(['action' => 'OpportunityController@store']) !!}
         <div class="form-group">
