@@ -52,6 +52,13 @@
                             {{$article->body}}
                         </p>
                     </div>
+
+                    @if(Auth::check() && Auth::user()->isAdmin())
+                        {!! Form::open(array('route' => array('articles.destroy', $article->id), 'method' => 'delete')) !!}
+                        <button type="submit" class="btn btn-danger btn-mini">Delete</button>
+                        {!! Form::close() !!}
+                    @endif
+
                     <div class="c-comments">
                         <div class="c-content-title-1">
                             <h3 class="c-font-uppercase c-font-bold">Comments({{count($article->comments)}})</h3>

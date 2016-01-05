@@ -19,6 +19,7 @@ Route::resource('articles.comments', 'ArticlesCommentsController');
 Route::get('articles', 'ArticlesController@index');
 Route::get('articles/create', 'ArticlesController@create');
 Route::get('articles/{id}', 'ArticlesController@show');
+Route::delete('articles/{id}', ['as'=>'articles.destroy', 'uses'=>'ArticlesController@delete']);
 Route::post('articles', 'ArticlesController@store');
 
 Route::resource('category', 'CategoryController');
