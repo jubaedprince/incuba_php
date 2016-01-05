@@ -31,6 +31,11 @@
         </div>
 
         <div class="form-group">
+            {!! Form::label('excerpt', 'Excerpt:') !!}
+            {!! Form::textarea('excerpt', null, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::label('body', 'Body:') !!}
             {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
         </div>

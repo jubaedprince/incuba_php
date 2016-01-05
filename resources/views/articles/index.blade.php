@@ -41,7 +41,7 @@
                             <a href="{{action('ArticlesController@show', [$article->id] )}}">{{$article->title}}</a>
                         </div>
                         <div class="c-desc">
-                            {{$article->body}}
+                            {{$article->excerpt}}
                             <a href="{{action('ArticlesController@show', [$article->id] )}}">read more...</a>
                         </div>
                         <div class="c-panel">
