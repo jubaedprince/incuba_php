@@ -36,16 +36,7 @@
                         <div class="item">
                             <div class="c-content-blog-post-card-1 c-option-2">
                                 <div class="c-media c-content-overlay">
-                                    <div class="c-overlay-wrapper">
-                                        <div class="c-overlay-content">
-                                            <a href="#">
-                                                <i class="icon-link"></i>
-                                            </a>
-                                            <a href="assets/base/img/content/stock2/06.jpg" data-lightbox="fancybox" data-fancybox-group="gallery">
-                                                <i class="icon-magnifier"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+
                                     <img class="c-overlay-object img-responsive" src="assets/base/img/content/stock2/06.jpg" alt=""> </div>
                                 <div class="c-body">
                                     <div class="c-title c-font-uppercase c-font-bold">

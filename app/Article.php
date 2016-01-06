@@ -12,7 +12,8 @@ class Article extends Model
         'body',
         'published_at',
         'excerpt',
-        'category_id'
+        'category_id',
+        'image'
     ];
 
     protected $guarded = [

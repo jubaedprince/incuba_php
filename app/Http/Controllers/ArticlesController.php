@@ -42,6 +42,7 @@ class ArticlesController extends Controller
         $input = Request::all();
         $article = Article::create($input);
         $article->user_id = Auth::user()->id;
+        $article->image = $this->upload();
         $article->save();
         return redirect('articles');
     }

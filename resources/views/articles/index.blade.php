@@ -22,21 +22,12 @@
 
                 @foreach ($articles as $article)
                     <div class="c-content-blog-post-1">
-                        <div class="c-media">
-                            <div class="c-content-media-2-slider" data-slider="owl" data-single-item="true" data-auto-play="4000">
-                                <div class="owl-carousel owl-theme c-theme owl-single">
-                                    <div class="item">
-                                        <div class="c-content-media-2" style="background-image: url(/assets/base/img/content/stock/23.jpg); min-height: 360px;"> </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="c-content-media-2" style="background-image: url(/assets/base/img/content/stock/34.jpg); min-height: 360px;"> </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="c-content-media-2" style="background-image: url(/assets/base/img/content/stock/37.jpg); min-height: 360px;"> </div>
-                                    </div>
-                                </div>
+                        @if ($article->image)
+                            <div class="c-media">
+                                <div class="c-content-media-2" style="background-image: url('/{{$article->image}}'); min-height: 360px;"></div>
                             </div>
-                        </div>
+                        @endif
+
                         <div class="c-title c-font-bold c-font-uppercase">
                             <a href="{{action('ArticlesController@show', [$article->id] )}}">{{$article->title}}</a>
                         </div>

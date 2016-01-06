@@ -2,8 +2,6 @@
 
 @section('content')
     <!-- BEGIN: PAGE CONTAINER -->
-    <div class="c-layout-page">
-        <!-- BEGIN: PAGE CONTENT -->
         <!-- BEGIN: LAYOUT/SLIDERS/REVO-SLIDER-4 -->
         <section class="c-layout-revo-slider c-layout-revo-slider-4">
             <div class="tp-banner-container c-theme" style="height: 620px">
@@ -124,9 +122,11 @@
 
                         @foreach($articles as $article)
                             <div class="c-content-blog-post-1">
-                                <div class="c-media">
-                                    <div class="c-content-media-2" style="background-image: url(assets/base/img/content/stock/23.jpg); min-height: 360px;"></div>
-                                </div>
+                                @if ($article->image)
+                                    <div class="c-media">
+                                        <div class="c-content-media-2" style="background-image: url('/{{$article->image}}'); min-height: 360px;"></div>
+                                    </div>
+                                @endif
                                 <div class="c-title c-font-bold c-font-uppercase">
                                     <a href="{{action('ArticlesController@show', [$article->id] )}}">Article Title</a>
                                 </div>
@@ -156,8 +156,6 @@
             </div>
         </div>
         <!-- END: PAGE CONTENT -->
-    </div>
-    <!-- END: PAGE CONTAINER -->
 @stop
 
 

@@ -24,7 +24,7 @@
 @section('content')
     <h1>Write a New Article</h1>
     <hr/>
-    {!! Form::open(['action' => 'ArticlesController@store']) !!}
+    {!! Form::open(['action' => 'ArticlesController@store', 'files' => true]) !!}
         <div class="form-group">
             {!! Form::label('title', 'Title:') !!}
             {!! Form::text('title', null, ['class' => 'form-control']) !!}
@@ -44,6 +44,12 @@
             {!! Form::label('category_id', 'Category') !!}
             {!! Form::select('category_id', $categories)!!}
         </div>
+
+        <div class="form-group">
+            {!! Form::label('photo', 'Photo') !!}
+            {!! Form::file('photo')!!}
+        </div>
+
         <div class="form-group">
             {!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
         </div>

@@ -148,7 +148,8 @@ return [
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         'Laracasts\Flash\FlashServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider'
+        'Illuminate\Html\HtmlServiceProvider',
+        'Intervention\Image\ImageServiceProvider'
     ],
 
     /*
@@ -200,6 +201,7 @@ return [
         'Flash'     => 'Laracasts\Flash\Flash',
         'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
+        'Image'     => 'Intervention\Image\Facades\Image'
 
     ],
 

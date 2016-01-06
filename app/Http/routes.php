@@ -31,3 +31,5 @@ Route::get('questions/{id}', 'QuestionsController@show');
 Route::post('questions', 'QuestionsController@store');
 
 Route::resource('opportunity', 'OpportunityController');
+
+Route::post('articles/upload', 'ArticlesController@upload2');

@@ -18,21 +18,11 @@
         <div class="col-md-9">
             <div class="c-content-blog-post-1-view">
                 <div class="c-content-blog-post-1">
-                    <div class="c-media">
-                        <div class="c-content-media-2-slider" data-slider="owl" data-single-item="true" data-auto-play="4000">
-                            <div class="owl-carousel owl-theme c-theme owl-single">
-                                <div class="item">
-                                    <div class="c-content-media-2" style="background-image: url({{URL::asset('/assets/base/img/content/misc/latest-work-3.jpg')}}); min-height: 460px;"> </div>
-                                </div>
-                                <div class="item">
-                                    <div class="c-content-media-2" style="background-image: url({{URL::asset('/assets/base/img/content/misc/latest-work-7.jpg')}}); min-height: 460px;"> </div>
-                                </div>
-                                <div class="item">
-                                    <div class="c-content-media-2" style="background-image: url({{URL::asset('/assets/base/img/content/misc/9.jpg')}}); min-height: 460px;"> </div>
-                                </div>
-                            </div>
+                    @if ($article->image)
+                        <div class="c-media">
+                            <div class="c-content-media-2" style="background-image: url('/{{$article->image}}'); min-height: 360px;"></div>
                         </div>
-                    </div>
+                    @endif
                     <div class="c-title c-font-bold c-font-uppercase">
                         {{$article->title}}
                     </div>
