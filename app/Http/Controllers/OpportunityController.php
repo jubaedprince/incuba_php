@@ -33,7 +33,9 @@ class OpportunityController extends Controller
     public function store(Request $request)
     {
         $input = Request::all();
-        Opportunity::create($input);
+        $opportunity = Opportunity::create($input);
+        $opportunity->image = $this->upload();
+        $opportunity->save();
         return redirect('opportunity');
     }
 

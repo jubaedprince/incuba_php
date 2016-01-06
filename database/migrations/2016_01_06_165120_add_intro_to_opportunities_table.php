@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOpportunitiesTable extends Migration
+class AddIntroToOpportunitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,8 @@ class CreateOpportunitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('opportunities', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->longText('description');
-            $table->timestamps();
+        Schema::table('opportunities', function (Blueprint $table) {
+            $table->text('intro');
         });
     }
 
@@ -27,6 +24,8 @@ class CreateOpportunitiesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('opportunities');
+        Schema::table('opportunities', function (Blueprint $table) {
+            $table->dropColumn('intro');
+        });
     }
 }

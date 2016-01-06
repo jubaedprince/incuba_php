@@ -8,7 +8,9 @@ class Opportunity extends Model
 {
     protected $fillable = [
         'title',
-        'description'
+        'description',
+        'image',
+        'intro'
     ];
 
 }

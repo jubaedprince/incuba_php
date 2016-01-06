@@ -85,21 +85,11 @@
                         </li>
 
                         @if (Auth::check())
-                            @if (Auth::user()->isAdmin() | Auth::user()->isWriter() )
-
-                                <li>
-                                    <a href="/articles/create" class="c-link dropdown-toggle">Write
-                                        <span class="c-arrow c-toggler"></span>
-                                    </a>
-
-                                </li>
-
-                            @endif
 
                             @if (Auth::user()->isAdmin())
 
                                 <li>
-                                    <a href="/category" class="c-link dropdown-toggle">Cats
+                                    <a href="/category" class="c-link dropdown-toggle">Categories
                                         <span class="c-arrow c-toggler"></span>
                                     </a>
 

@@ -16,6 +16,18 @@
 @stop
 
 @section('content')
+    @if (Auth::check())
+        @if (Auth::user()->isAdmin() | Auth::user()->isWriter() )
+            <div class="row">
+                <a href="/articles/create">
+                    <button type="button" class="btn btn-primary c-btn-uppercase c-btn-bold pull-right">
+                        <i class="fa fa-plus"></i> Write New Article
+                    </button>
+                </a>
+            </div>
+        @endif
+    @endif
+
     <div class="row">
         <div class="col-md-9">
             <div class="c-content-blog-post-1-list">
@@ -75,4 +87,5 @@
 
         </div>
     </div>
+
 @stop
