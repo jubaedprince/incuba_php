@@ -33,9 +33,4 @@ class PagesController extends Controller
 
     }
 
-    public function profile(){
-
-        return view('pages.profile');
-
-    }
 }

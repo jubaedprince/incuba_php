@@ -70,14 +70,14 @@
                 <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
                 <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
                     <ul class="nav navbar-nav c-theme-nav">
-                        <li class="c-active">
+                        <li class="{{ Request::path()=='' ? 'c-active' : '' }}">
                             <a href="/" class="c-link dropdown-toggle">Home
                                 <span class="c-arrow c-toggler"></span>
                             </a>
 
                         </li>
 
-                        <li>
+                        <li class = "{{ Request::path()=='articles' ? 'c-active' : '' }}">
                             <a href="/articles" class="c-link dropdown-toggle">Articles
                                 <span class="c-arrow c-toggler"></span>
                             </a>
@@ -88,14 +88,14 @@
 
                             @if (Auth::user()->isAdmin())
 
-                                <li>
+                                <li class="{{ Request::path()=='category' ? 'c-active' : '' }}">
                                     <a href="/category" class="c-link dropdown-toggle">Categories
                                         <span class="c-arrow c-toggler"></span>
                                     </a>
 
                                 </li>
 
-                                <li>
+                                <li class="{{ Request::path()=='profile' ? 'c-active' : '' }}">
                                     <a href="/profile" class="c-link dropdown-toggle">Profile
                                         <span class="c-arrow c-toggler"></span>
                                     </a>
@@ -104,28 +104,30 @@
                             @endif
                         @endif
 
-                        <li>
+
+
+                        <li class=" {{ Request::path()=='questions' ? 'c-active' : '' }}">
                             <a href="/questions" class="c-link dropdown-toggle">Questions
                                 <span class="c-arrow c-toggler"></span>
                             </a>
 
                         </li>
 
-                        <li>
+                        <li class=" {{ Request::path()=='opportunity' ? 'c-active' : '' }}">
                             <a href="/opportunity" class="c-link dropdown-toggle">Opportunity
                                 <span class="c-arrow c-toggler"></span>
                             </a>
 
                         </li>
 
-                        <li>
+                        <li class="{{ Request::path()=='about' ? 'c-active' : '' }}">
                             <a href="/about" class="c-link dropdown-toggle">About
                                 <span class="c-arrow c-toggler"></span>
                             </a>
 
                         </li>
 
-                        <li>
+                        <li class="{{ Request::path()=='contact' ? 'c-active' : '' }}">
                             <a href="/contact" class="c-link dropdown-toggle">Contact
                                 <span class="c-arrow c-toggler"></span>
                             </a>

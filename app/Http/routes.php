@@ -12,7 +12,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
-Route::get('profile', 'PagesController@profile');
 Route::get('contact', 'PagesController@contact');
 
 Route::resource('articles.comments', 'ArticlesCommentsController');
@@ -32,4 +31,6 @@ Route::post('questions', 'QuestionsController@store');
 
 Route::resource('opportunity', 'OpportunityController');
 
-Route::post('articles/upload', 'ArticlesController@upload2');
+Route::get('profile', 'ProfileController@show');
+Route::get('profile/edit', 'ProfileController@edit');
+Route::post('profile/edit', 'ProfileController@update');

@@ -7,7 +7,11 @@
 @section('breadcrumb_links')
     <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
         <li>
-            <a href="/articles">Home</a>
+            <a href="/">Home</a>
+        </li>
+        <li>/</li>
+        <li>
+            <a href="/articles">Articles</a>
         </li>
         <li>/</li>
         <li class="c-state_active"> {{$article->title}}</li>
@@ -60,7 +64,7 @@
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#">
-                                                <img class="media-object" alt="" src="/assets/base/img/content/team/team1.jpg"> </a>
+                                                <img class="media-object" alt="" src="/{{$comment->user->photo}}"> </a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">
